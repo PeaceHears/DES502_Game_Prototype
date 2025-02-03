@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
     public EnemyAttack attack;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
+    public Animator animator;
 
-    private Animator animator;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer spriteRenderer;
     private PlayerAwarenessController _playerAwarenessController;

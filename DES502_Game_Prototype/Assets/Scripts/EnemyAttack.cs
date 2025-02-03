@@ -40,6 +40,7 @@ public class EnemyAttack : MonoBehaviour
 
             if (player)
             {
+                player.animator.SetTrigger("Hurt");
                 player.Health -= damage;
             }
         }

@@ -6,15 +6,15 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
-    public float collisionOffset = 0.05f;
+    public float collisionOffset = 0.02f;
     public ContactFilter2D movementFilter;
     public PlayerAttack attack;
     public float health = 10;
+    public Animator animator;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
-    Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     bool canMove = true;
 

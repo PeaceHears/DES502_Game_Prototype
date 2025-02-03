@@ -7,11 +7,11 @@ public class PlayerAttack : MonoBehaviour
     public Collider2D hitboxCollider;
     public float damage = 2;
 
-    Vector2 rightAttackOffset;
+    private Vector2 rightAttackOffset;
 
-    private void Start()
+    private void Awake()
     {
-        rightAttackOffset = transform.position;
+        rightAttackOffset = transform.localPosition;
     }
 
     public void AttackLeft()
@@ -39,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (enemy)
             {
+                enemy.animator.SetTrigger("Hurt");
                 enemy.Health -= damage;
             }
         }
