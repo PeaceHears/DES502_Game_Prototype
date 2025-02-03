@@ -46,11 +46,11 @@ public class Player : MonoBehaviour
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
 
-                animator.SetBool("isMoving", success);
+                animator.SetBool("isWalking", success);
             }
             else
             {
-                animator.SetBool("isMoving", false);
+                animator.SetBool("isWalking", false);
             }
 
             // Set direction of sprite to movement direction
