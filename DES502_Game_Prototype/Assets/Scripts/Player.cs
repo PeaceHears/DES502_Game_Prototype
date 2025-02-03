@@ -8,14 +8,13 @@ public class Player : MonoBehaviour
     public float moveSpeed = 3.0f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
-    //public SwordAttack swordAttack;
+    public PlayerAttack attack;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
     bool canMove = true;
 
     // Start is called before the first frame update
@@ -28,12 +27,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if(canMove)
         {
             // If movement input is not 0, try to move
             if (movementInput != Vector2.zero)
             {
-
                 bool success = TryMove(movementInput);
 
                 if (!success)
@@ -98,30 +96,30 @@ public class Player : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    //void OnFire()
-    //{
-    //    animator.SetTrigger("swordAttack");
-    //}
+    void OnFire()
+    {
+        animator.SetTrigger("Attacked");
+    }
 
-    //public void SwordAttack()
-    //{
-    //    LockMovement();
+    public void StartAttack()
+    {
+        LockMovement();
 
-    //    if (spriteRenderer.flipX == true)
-    //    {
-    //        swordAttack.AttackLeft();
-    //    }
-    //    else
-    //    {
-    //        swordAttack.AttackRight();
-    //    }
-    //}
+        if (spriteRenderer.flipX == true)
+        {
+            attack.AttackLeft();
+        }
+        else
+        {
+            attack.AttackRight();
+        }
+    }
 
-    //public void EndSwordAttack()
-    //{
-    //    UnlockMovement();
-    //    swordAttack.StopAttack();
-    //}
+    public void EndAttack()
+    {
+        UnlockMovement();
+        attack.StopAttack();
+    }
 
     public void LockMovement()
     {
