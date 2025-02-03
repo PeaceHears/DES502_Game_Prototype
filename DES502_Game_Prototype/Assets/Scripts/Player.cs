@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public PlayerAttack attack;
+    public float health = 10;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -17,7 +18,23 @@ public class Player : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     bool canMove = true;
 
-    // Start is called before the first frame update
+    public float Health
+    {
+        set
+        {
+            health = value;
+
+            if (health <= 0)
+            {
+                Defeated();
+            }
+        }
+        get
+        {
+            return health;
+        }
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -129,5 +146,15 @@ public class Player : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
+    }
+
+    public void Defeated()
+    {
+        animator.SetTrigger("Defeated");
+    }
+
+    public void RemovePlayer()
+    {
+        Destroy(gameObject);
     }
 }

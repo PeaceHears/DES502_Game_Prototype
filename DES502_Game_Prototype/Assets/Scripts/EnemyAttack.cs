@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
     public Collider2D hitboxCollider;
-    public float damage = 2;
+    public float damage = 1;
+    public Animator animator;
 
-    Vector2 rightAttackOffset;
+    private Vector2 rightAttackOffset;
 
     private void Start()
     {
@@ -33,13 +34,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Player")
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            Player player = other.GetComponent<Player>();
 
-            if (enemy)
+            if (player)
             {
-                enemy.Health -= damage;
+                player.Health -= damage;
             }
         }
     }

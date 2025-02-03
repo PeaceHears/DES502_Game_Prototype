@@ -360,9 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683fb3f01ebe6eb499849e0546f38a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomManager: {fileID: 43444462}
   enemies:
   - {fileID: 8897880403862702711, guid: 58c13efc9c8171949badb45534a2adaf, type: 3}
-  roomManager: {fileID: 43444462}
 --- !u!1 &450842686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,7 +1870,7 @@ GameObject:
   - component: {fileID: 923798709}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2085,6 +2085,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   attack: {fileID: 1032892378}
+  health: 10
 --- !u!1 &1024339484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d456788736b304a4ea1f1c22aa64476f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordCollider: {fileID: 1032892377}
+  hitboxCollider: {fileID: 1032892377}
   damage: 3
 --- !u!1 &1085190051
 GameObject:
