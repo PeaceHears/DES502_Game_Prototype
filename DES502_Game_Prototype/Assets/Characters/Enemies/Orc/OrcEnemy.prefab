@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2097164365551707204}
   - component: {fileID: 6955253257808327615}
   - component: {fileID: 263276515738333100}
-  - component: {fileID: 8897880403862702711}
   - component: {fileID: 703618700874683137}
-  - component: {fileID: 3238642224435396618}
+  - component: {fileID: 4950561229038791293}
   - component: {fileID: 6710104685128428562}
+  - component: {fileID: 8230171531808234102}
   m_Layer: 0
   m_Name: OrcEnemy
   m_TagString: Enemy
@@ -111,39 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8897880403862702711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4910630804239543758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c7f76e7df7b3c94fa06c9675151d41c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  roomTypes: 00000000
-  health: 1
-  count: 5
-  moveSpeed: 1
-  attack: {fileID: 6215137005856752816}
-  collisionOffset: 0.05
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!114 &703618700874683137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAwarenessDistance: 3
---- !u!70 &3238642224435396618
-CapsuleCollider2D:
+--- !u!61 &4950561229038791293
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -189,9 +156,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0152128935, y: 0.009127617}
-  m_Size: {x: 0.4292562, y: 0.5144491}
-  m_Direction: 0
+  m_Offset: {x: 0.14413333, y: 0.021538377}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.125, y: 3.125}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.71099615, y: 0.51457334}
+  m_EdgeRadius: 0
 --- !u!50 &6710104685128428562
 Rigidbody2D:
   serializedVersion: 4
@@ -219,6 +196,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8230171531808234102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910630804239543758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7f76e7df7b3c94fa06c9675151d41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  roomTypes: 00000000
+  health: 5
+  count: 5
+  moveSpeed: 1
+  attack: {fileID: 6215137005856752816}
+  collisionOffset: 0.05
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  animator: {fileID: 263276515738333100}
 --- !u!1 &6598362629972695372
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 6598362629972695372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.363, y: -0.028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,7 +295,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.389055, y: -0.051455975}
+  m_Offset: {x: 0.078846574, y: 0.06132567}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -295,7 +306,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36578655, y: 0.53086376}
+  m_Size: {x: 0.57501674, y: 0.83287215}
   m_EdgeRadius: 0
 --- !u!114 &6215137005856752816
 MonoBehaviour:

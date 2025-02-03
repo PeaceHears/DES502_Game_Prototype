@@ -55,6 +55,11 @@ public class Enemy : MonoBehaviour
             UpdateTargetDirection();
             Move();
             RotateTowardsTarget();
+
+        if(_playerAwarenessController.NearbyPlayer)
+        {
+            AnimateAttack();
+        }
         //}
     }
 
@@ -178,6 +183,11 @@ public class Enemy : MonoBehaviour
     public void RemoveEnemy()
     {
         Destroy(gameObject);
+    }
+
+    public void AnimateAttack()
+    {
+        animator.SetTrigger("Attacked");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

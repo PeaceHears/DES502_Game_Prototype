@@ -6,6 +6,8 @@ public class PlayerAwarenessController : MonoBehaviour
 {
     public bool AwareOfPlayer { get; private set; }
 
+    public bool NearbyPlayer { get; private set; }
+
     public Vector2 DirectionToPlayer { get; private set; }
 
     [SerializeField]
@@ -15,7 +17,8 @@ public class PlayerAwarenessController : MonoBehaviour
 
     private void Awake()
     {
-        _player = FindObjectOfType<PlayerAttack>().transform;
+        _player = FindAnyObjectByType<PlayerAttack>().transform;
+        NearbyPlayer = false;
     }
 
     // Update is called once per frame
@@ -31,6 +34,15 @@ public class PlayerAwarenessController : MonoBehaviour
         else
         {
             AwareOfPlayer = false;
+        }
+
+        if (enemyToPlayerVector.magnitude <= 1)
+        {
+            NearbyPlayer = true;
+        }
+        else
+        {
+            NearbyPlayer = false;
         }
     }
 }
