@@ -119,4 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7f76e7df7b3c94fa06c9675151d41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  roomTypes: 00000000
   health: 1
+  count: 5

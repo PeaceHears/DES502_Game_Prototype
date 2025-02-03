@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public ENEMY_TYPE type;
+    public ROOM_TYPE[] roomTypes;
     public float health = 1;
     public int count = 5;
 
