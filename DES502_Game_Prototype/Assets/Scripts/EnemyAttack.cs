@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        rightAttackOffset = transform.position;
+        rightAttackOffset = transform.localPosition;
     }
 
     public void AttackLeft()
