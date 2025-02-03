@@ -6,14 +6,18 @@ using UnityEngine.Tilemaps;
 public class RoomManager : MonoBehaviour
 {
     public Tilemap entranceRoom;
+    public Tilemap section1Room;
 
     public List<Vector2> entranceRoomTilePositions;
+    public List<Vector2> section1RoomTilePositions;
 
     private void Start()
     {
         entranceRoomTilePositions = new List<Vector2>();
+        section1RoomTilePositions = new List<Vector2>();
 
         SetTileMapPositions(entranceRoom, entranceRoomTilePositions);
+        SetTileMapPositions(section1Room, section1RoomTilePositions);
     }
 
     private void SetTileMapPositions(Tilemap tilemap, List<Vector2> tilePositions)

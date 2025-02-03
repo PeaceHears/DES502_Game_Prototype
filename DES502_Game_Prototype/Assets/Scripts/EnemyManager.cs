@@ -10,10 +10,12 @@ public class EnemyManager : MonoBehaviour
     public Enemy[] enemies;
 
     private List<Vector2> entranceRoomTilePositions;
+    private List<Vector2> section1RoomTilePositions;
 
     private void Start()
     {
         entranceRoomTilePositions = roomManager.entranceRoomTilePositions;
+        section1RoomTilePositions = roomManager.section1RoomTilePositions;
 
         CreateEnemies();
     }
@@ -54,6 +56,7 @@ public class EnemyManager : MonoBehaviour
                 tilePositions = entranceRoomTilePositions;
                 break;
             case ENEMY_TYPE.SOLDIER:
+                tilePositions = section1RoomTilePositions;
                 break;
             case ENEMY_TYPE.NINJA:
                 break;

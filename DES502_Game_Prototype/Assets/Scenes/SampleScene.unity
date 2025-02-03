@@ -172,7 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceRoom: {fileID: 1883018352}
+  section1Room: {fileID: 1085190054}
   entranceRoomTilePositions: []
+  section1RoomTilePositions: []
 --- !u!1 &86949866
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +365,7 @@ MonoBehaviour:
   roomManager: {fileID: 43444462}
   enemies:
   - {fileID: 8230171531808234102, guid: 58c13efc9c8171949badb45534a2adaf, type: 3}
+  - {fileID: 6885207169066941582, guid: 525f580497551ec439f97701eb05e6e6, type: 3}
 --- !u!1 &450842686
 GameObject:
   m_ObjectHideFlags: 0
@@ -14645,10 +14648,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 640, y: 360}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
