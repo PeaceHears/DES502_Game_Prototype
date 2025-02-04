@@ -173,8 +173,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entranceRoom: {fileID: 1883018352}
   section1Room: {fileID: 1085190054}
+  section2Room: {fileID: 1813543883}
   entranceRoomTilePositions: []
   section1RoomTilePositions: []
+  section2RoomTilePositions: []
 --- !u!1 &86949866
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +368,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 8230171531808234102, guid: 58c13efc9c8171949badb45534a2adaf, type: 3}
   - {fileID: 6885207169066941582, guid: 525f580497551ec439f97701eb05e6e6, type: 3}
+  - {fileID: 6885207169066941582, guid: ad1eb84e0fee132489794984de267356, type: 3}
 --- !u!1 &450842686
 GameObject:
   m_ObjectHideFlags: 0
