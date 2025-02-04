@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public int count = 5;
     public float moveSpeed = 1;
     public EnemyAttack attack;
-    public float collisionOffset = 0.05f;
+    public float collisionOffset = 0.01f;
     public ContactFilter2D movementFilter;
     public Animator animator;
 
@@ -135,6 +135,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
+                AnimateAttack();
                 return false;
             }
         }
@@ -188,13 +189,5 @@ public class Enemy : MonoBehaviour
     public void AnimateAttack()
     {
         animator.SetTrigger("Attacked");
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            animator.SetTrigger("Attacked");
-        }
     }
 }

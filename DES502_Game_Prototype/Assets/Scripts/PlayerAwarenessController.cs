@@ -36,7 +36,7 @@ public class PlayerAwarenessController : MonoBehaviour
             AwareOfPlayer = false;
         }
 
-        if (enemyToPlayerVector.magnitude <= 1)
+        if (enemyToPlayerVector.magnitude <= 0.5f)
         {
             NearbyPlayer = true;
         }

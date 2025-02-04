@@ -18,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
     public void AttackLeft()
     {
         hitboxCollider.enabled = true;
-        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
+        transform.localPosition = new Vector3(rightAttackOffset.x * -2, rightAttackOffset.y);
     }
 
     public void AttackRight()
