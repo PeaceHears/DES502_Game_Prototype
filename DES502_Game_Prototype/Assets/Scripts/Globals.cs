@@ -19,9 +19,8 @@ namespace Globals
 
     public enum ITEM_TYPE
     {
-        ORC,
-        SOLDIER,
-        NINJA
+        CHEST,
+        COIN
     }
 }
 
