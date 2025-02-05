@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private Vector2 initialPosition;
     private Vector2 newPosition;
@@ -16,15 +16,13 @@ public class Card : MonoBehaviour
         newPosition = new Vector2(initialPosition.x, initialPosition.y + 10.0f);
     }
 
-    private void Update()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-        {
-            transform.localPosition = newPosition;
-        }
-        else
-        {
-            transform.localPosition = initialPosition;
-        }
+        transform.localPosition = newPosition;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.localPosition = initialPosition;
     }
 }
