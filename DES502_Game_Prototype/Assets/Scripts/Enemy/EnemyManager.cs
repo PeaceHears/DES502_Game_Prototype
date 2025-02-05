@@ -42,6 +42,11 @@ public class EnemyManager : MonoBehaviour
 
             List<Vector2> tilePositions = FillTilePositionsByEnemyType(enemy.type);
 
+            if(enemy.type == ENEMY_TYPE.BOSS)
+            {
+                ExcludeTilesForBoss(tilePositions);
+            }
+
             if(tilePositions.Count > 0)
             {
                 for (int j = 0; j < enemy.count; j++)
@@ -77,5 +82,16 @@ public class EnemyManager : MonoBehaviour
         }
 
         return tilePositions;
+    }
+
+    private void ExcludeTilesForBoss(List<Vector2> tilePositions)
+    {
+        for (int i = 0; i < tilePositions.Count; i++)
+        {
+            if (tilePositions[i].y > -12)
+            {
+                tilePositions.RemoveAt(i);
+            }
+        }
     }
 }
