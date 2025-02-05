@@ -40,11 +40,14 @@ public class EnemyManager : MonoBehaviour
 
             List<Vector2> tilePositions = FillTilePositionsByEnemyType(enemy.type);
 
-            for (int j = 0; j < enemy.count; j++)
+            if(tilePositions.Count > 0)
             {
-                Vector2 tilePosition = tilePositions[Random.Range(0, tilePositions.Count)];
-                Enemy enemyClone = Instantiate(enemy, new Vector3(tilePosition.x, tilePosition.y, 0), Quaternion.identity);
-                enemyClone.gameObject.transform.parent = transform;
+                for (int j = 0; j < enemy.count; j++)
+                {
+                    Vector2 tilePosition = tilePositions[Random.Range(0, tilePositions.Count)];
+                    Enemy enemyClone = Instantiate(enemy, new Vector3(tilePosition.x, tilePosition.y, 0), Quaternion.identity);
+                    enemyClone.gameObject.transform.parent = transform;
+                }
             }
         }
     }

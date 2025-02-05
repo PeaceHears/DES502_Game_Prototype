@@ -13,7 +13,7 @@ public class RoomManager : MonoBehaviour
     public List<Vector2> section1RoomTilePositions;
     public List<Vector2> section2RoomTilePositions;
 
-    private void Start()
+    private void Awake()
     {
         entranceRoomTilePositions = new List<Vector2>();
         section1RoomTilePositions = new List<Vector2>();

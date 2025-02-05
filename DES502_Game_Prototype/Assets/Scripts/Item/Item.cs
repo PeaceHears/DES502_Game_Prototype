@@ -9,4 +9,11 @@ public class Item : MonoBehaviour
     public ROOM_TYPE[] roomTypes;
     public int count = 5;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

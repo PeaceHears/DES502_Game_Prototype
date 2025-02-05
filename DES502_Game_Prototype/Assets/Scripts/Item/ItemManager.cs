@@ -8,12 +8,10 @@ public class ItemManager : MonoBehaviour
     public RoomManager roomManager;
     public Item[] items;
 
-    private List<Vector2> entranceRoomTilePositions;
     private List<Vector2> section1RoomTilePositions;
 
     private void Start()
     {
-        entranceRoomTilePositions = roomManager.entranceRoomTilePositions;
         section1RoomTilePositions = roomManager.section1RoomTilePositions;
 
         CreateItems();
@@ -37,11 +35,14 @@ public class ItemManager : MonoBehaviour
 
             List<Vector2> tilePositions = FillTilePositionsByEnemyType(item.type);
 
-            for (int j = 0; j < item.count; j++)
+            if(tilePositions.Count > 0)
             {
-                Vector2 tilePosition = tilePositions[Random.Range(0, tilePositions.Count)];
-                Item itemClone = Instantiate(item, new Vector3(tilePosition.x, tilePosition.y, 0), Quaternion.identity);
-                itemClone.gameObject.transform.parent = transform;
+                for (int j = 0; j < item.count; j++)
+                {
+                    Vector2 tilePosition = tilePositions[Random.Range(0, tilePositions.Count)];
+                    Item itemClone = Instantiate(item, new Vector3(tilePosition.x, tilePosition.y, 0), Quaternion.identity);
+                    itemClone.gameObject.transform.parent = transform;
+                }
             }
         }
     }
@@ -53,7 +54,7 @@ public class ItemManager : MonoBehaviour
         switch (itemType)
         {
             case ITEM_TYPE.CHEST:
-                tilePositions = entranceRoomTilePositions;
+                tilePositions = section1RoomTilePositions;
                 break;
             case ITEM_TYPE.COIN:
                 tilePositions = section1RoomTilePositions;
