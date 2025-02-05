@@ -14,7 +14,8 @@ namespace Globals
     {
         ORC,
         SOLDIER,
-        NINJA
+        NINJA,
+        BOSS
     }
 
     public enum ITEM_TYPE

@@ -8,20 +8,24 @@ public class RoomManager : MonoBehaviour
     public Tilemap entranceRoom;
     public Tilemap section1Room;
     public Tilemap section2Room;
+    public Tilemap bossRoom;
 
     public List<Vector2> entranceRoomTilePositions;
     public List<Vector2> section1RoomTilePositions;
     public List<Vector2> section2RoomTilePositions;
+    public List<Vector2> bossRoomTilePositions;
 
     private void Awake()
     {
         entranceRoomTilePositions = new List<Vector2>();
         section1RoomTilePositions = new List<Vector2>();
         section2RoomTilePositions = new List<Vector2>();
+        bossRoomTilePositions = new List<Vector2>();
 
         SetTileMapPositions(entranceRoom, entranceRoomTilePositions);
         SetTileMapPositions(section1Room, section1RoomTilePositions);
         SetTileMapPositions(section2Room, section2RoomTilePositions);
+        SetTileMapPositions(bossRoom, bossRoomTilePositions);
     }
 
     private void SetTileMapPositions(Tilemap tilemap, List<Vector2> tilePositions)

@@ -12,12 +12,14 @@ public class EnemyManager : MonoBehaviour
     private List<Vector2> entranceRoomTilePositions;
     private List<Vector2> section1RoomTilePositions;
     private List<Vector2> section2RoomTilePositions;
+    private List<Vector2> bossRoomTilePositions;
 
     private void Start()
     {
         entranceRoomTilePositions = roomManager.entranceRoomTilePositions;
         section1RoomTilePositions = roomManager.section1RoomTilePositions;
         section2RoomTilePositions = roomManager.section2RoomTilePositions;
+        bossRoomTilePositions = roomManager.bossRoomTilePositions;
 
         CreateEnemies();
     }
@@ -66,6 +68,9 @@ public class EnemyManager : MonoBehaviour
                 break;
             case ENEMY_TYPE.NINJA:
                 tilePositions = section2RoomTilePositions;
+                break;
+            case ENEMY_TYPE.BOSS:
+                tilePositions = bossRoomTilePositions;
                 break;
             default:
                 break;

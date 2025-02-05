@@ -80,11 +80,11 @@ public class Enemy : MonoBehaviour
 
         if (_targetDirection.x < 0)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = type == ENEMY_TYPE.BOSS ? false : true;
         }
         else if (_targetDirection.x > 0)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = type == ENEMY_TYPE.BOSS ? true : false;
         }
     }
 
@@ -144,6 +144,20 @@ public class Enemy : MonoBehaviour
 
     public void StartAttack()
     {
+        if(type == ENEMY_TYPE.BOSS)
+        {
+            if (spriteRenderer.flipX == false)
+            {
+                attack.AttackLeft();
+            }
+            else
+            {
+                attack.AttackRight();
+            }
+
+            return;
+        }
+
         if (spriteRenderer.flipX == true)
         {
             attack.AttackLeft();
