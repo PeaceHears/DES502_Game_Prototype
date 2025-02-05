@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     private PlayerAwarenessController _playerAwarenessController;
     private Vector2 _targetDirection;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-    private bool canMove = true;
 
     public float Health
     {
@@ -50,17 +49,14 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if(canMove)
-        //{
-            UpdateTargetDirection();
-            Move();
-            RotateTowardsTarget();
+        UpdateTargetDirection();
+        Move();
+        RotateTowardsTarget();
 
         if(_playerAwarenessController.NearbyPlayer)
         {
             AnimateAttack();
         }
-        //}
     }
 
     private void UpdateTargetDirection()
@@ -148,8 +144,6 @@ public class Enemy : MonoBehaviour
 
     public void StartAttack()
     {
-        //LockMovement();
-
         if (spriteRenderer.flipX == true)
         {
             attack.AttackLeft();
@@ -162,18 +156,7 @@ public class Enemy : MonoBehaviour
 
     public void EndAttack()
     {
-        //UnlockMovement();
         attack.StopAttack();
-    }
-
-    public void LockMovement()
-    {
-        canMove = false;
-    }
-
-    public void UnlockMovement()
-    {
-        canMove = true;
     }
 
     public void Defeated()

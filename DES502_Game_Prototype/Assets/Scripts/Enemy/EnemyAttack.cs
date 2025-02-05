@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
     public Collider2D hitboxCollider;
     public float damage = 1;
     public Animator animator;
+    public float leftHitboxPositionX;
 
     private Vector2 rightAttackOffset;
 
@@ -18,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
     public void AttackLeft()
     {
         hitboxCollider.enabled = true;
-        transform.localPosition = new Vector3(rightAttackOffset.x * -2, rightAttackOffset.y);
+        transform.localPosition = new Vector3(leftHitboxPositionX, rightAttackOffset.y);
     }
 
     public void AttackRight()
