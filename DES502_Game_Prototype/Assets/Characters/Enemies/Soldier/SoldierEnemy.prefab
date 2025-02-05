@@ -139,7 +139,7 @@ MonoBehaviour:
   type: 1
   roomTypes: 01000000
   health: 5
-  count: 5
+  count: 10
   moveSpeed: 1
   attack: {fileID: 8499593423836588832}
   collisionOffset: 0.01
