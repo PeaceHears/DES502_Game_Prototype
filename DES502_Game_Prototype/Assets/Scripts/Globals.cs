@@ -16,6 +16,13 @@ namespace Globals
         SOLDIER,
         NINJA
     }
+
+    public enum ITEM_TYPE
+    {
+        ORC,
+        SOLDIER,
+        NINJA
+    }
 }
 
 
